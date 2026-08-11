@@ -29,7 +29,6 @@
             background-color: #0b0b0b;
         }
 
-        /* --- BACKGROUND WALLPAPER CROSSFADE LAYERS --- */
         .bg-layer {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -58,7 +57,6 @@
             opacity: 1;
         }
 
-        /* DARK MODE OVERLAY DIMMER WITH VINTAGE GLOW */
         body::before {
             content: '';
             position: fixed;
@@ -76,25 +74,21 @@
             position: absolute; width: 1px; height: 1px; overflow: hidden; opacity: 0; pointer-events: none; z-index: -10;
         }
 
-        .top-nav {
-            display: flex; justify-content: flex-end; align-items: center;
-            padding: 20px 20px; background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%);
-            z-index: 2;
-        }
-
-        .nav-right {
+        .theme-toggle-container {
+            position: fixed;
+            left: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 100;
             display: flex;
             align-items: center;
-            gap: 8px;
-            position: relative;
         }
 
-        /* --- HORIZONTAL THEME TOGGLE SWITCH IN TOP NAV (MOBILE FRIENDLY) --- */
         .theme-switch {
             position: relative;
             display: inline-block;
-            width: 50px;
-            height: 28px;
+            width: 34px;
+            height: 64px;
         }
 
         .theme-switch input {
@@ -112,22 +106,22 @@
             -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.2);
             transition: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            border-radius: 28px;
+            border-radius: 34px;
         }
 
         .theme-slider:before {
             position: absolute;
             content: "";
-            height: 20px;
-            width: 20px;
+            height: 26px;
+            width: 26px;
             left: 3px;
-            bottom: 3px;
+            top: 3px;
             background-color: white;
             transition: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
             border-radius: 50%;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
             background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%231a1a1a"><path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36l-1.06 1.06c-.39.39-.39 1.03 0 1.41.39.39 1.03.39 1.41 0l1.06-1.06c-.39-.39-.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0z"/></svg>');
-            background-size: 11px;
+            background-size: 14px;
             background-repeat: no-repeat;
             background-position: center;
         }
@@ -138,9 +132,22 @@
         }
 
         input:checked + .theme-slider:before {
-            transform: translateX(22px);
+            transform: translateY(30px);
             background-color: #222;
             background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23fff"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-3.03 0-5.5-2.47-5.5-5.5 0-1.82.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/></svg>');
+        }
+
+        .top-nav {
+            display: flex; justify-content: flex-end; align-items: center;
+            padding: 20px 20px; background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%);
+            z-index: 2;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            position: relative;
         }
 
         .platform-btn, .suggestion-pill-btn {
@@ -170,7 +177,6 @@
 
         .platform-btn svg { width: 13px; height: 13px; fill: currentColor; }
 
-        /* --- SPEECH BUBBLE POPUP --- */
         .bubble-dropdown {
             position: absolute;
             top: 45px;
@@ -318,7 +324,6 @@
             fill: currentColor;
         }
 
-        /* --- QUEUE PANEL WITH ADVANCED SMART SEARCH --- */
         .queue-panel {
             position: absolute;
             bottom: 85px; 
@@ -477,18 +482,15 @@
 
     <nav class="top-nav">
         <div class="nav-right">
-            <!-- TOP-RIGHT DARK MODE SWITCH -->
             <label class="theme-switch" title="Toggle Dark Mode">
                 <input type="checkbox" id="dark-mode-toggle" onchange="toggleDarkMode()">
                 <span class="theme-slider"></span>
             </label>
 
-            <!-- SUGGESTION BUTTON -->
             <button class="suggestion-pill-btn" onclick="toggleSuggestionBubble(event)">
                 Suggestions
             </button>
 
-            <!-- SPEECH BUBBLE FORM -->
             <div class="bubble-dropdown" id="suggestion-bubble">
                 <div style="display: flex; flex-direction: column; gap: 10px;">
                     <label class="bubble-label">Name</label>
@@ -501,7 +503,6 @@
                 </div>
             </div>
 
-            <!-- PLATFORM BUTTONS -->
             <a href="https://spotify.com" target="_blank" class="platform-btn spotify-btn">
                 <svg viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.599-.12-.42.18-.78.599-.9 4.5-1.02 8.46-.6 11.7 1.44.36.18.48.66.282 1.02zm1.44-3.84c-.301.42-.84.54-1.26.24-3.24-1.98-8.16-2.58-11.94-1.44-.48.18-1.02-.06-1.2-.54-.18-.48.06-1.02.54-1.2 4.2-1.26 9.6-0.6 13.38 1.68.42.3.54.84.24 1.26zm.12-4.08C15.24 7.32 8.82 7.08 5.1 8.22c-.6.18-1.26-.18-1.44-.78-.18-.6.18-1.26.78-1.44 4.38-1.38 11.58-1.08 16.02 1.56.54.3.72 1.02.42 1.56-.3.54-1.02.72-1.56.42z"/></svg>
                 Spotify
@@ -519,7 +520,6 @@
 
     <div class="player-wrapper">
         
-        <!-- QUEUE PANEL WITH ADVANCED SEARCH -->
         <div id="queue-panel" class="queue-panel">
             <input type="text" id="queue-search" class="queue-search-input" placeholder="Search by song name or artist..." oninput="filterQueue()" autocomplete="off">
             <div id="queue-list" class="queue-list-inner">
@@ -672,7 +672,7 @@
             "Aapki aankhon mein doob jane ko dil chahta hai,\nYeh safar yunhi umar bhar chalta jata hai.",
             "Bina soche aapko yaad karte hain,\nHum aapse behad pyaar karte hain.",
             "Aapki khushi se hi mera chehra khilta hai,\nYeh dil aapko dekh kar hi sukoon milta hai.",
-            "Meri har dua ka bas ek hi naam hai,\nAapki hansi mere jeene ka paigham hai.",
+            "Meri har dua ka bas ek ki naam hai,\nAapki hansi mere jeene ka paigham hai.",
             "Aapki yadon mein raat guzar jati hai,\nSubah hote hi tasveer nazar aati hai.",
             "Tujhse juda hokar ek pal bhi na ji sakenge,\nTere bin yeh saansein bhi gair lagne lagenge.",
             "Aapke aane se zindagi mein rang aaye hain,\nHumne toh bas aapko hi apna banaye hain.",
@@ -696,8 +696,8 @@
             "Tere sath bitaya har pal khaas hota hai,\nYeh dil hamesha tere aas-paas hota hai.",
             "Aapki har baat mein jadoo sa lagta hai,\nYeh dil aap par hi fida sa rehta hai.",
             "Tere ishq ki roshni aisi chhayi hai,\nKi har andhera door bhagayi hai.",
-            "Aapki baaton mein ek dil ko qarar milta hai,\nAapka sath jaise uparwale ka pyaar milta hai.",
-            "Meri khwahishon ka bas ek hi kinara hai,\nAapka pyaar hi mera sahara hai.",
+            "Aapki baaton se dil ko qarar milta hai,\nAapka sath jaise uparwale ka pyaar milta hai.",
+            "Meri khwahishon ka bas ek ki kinara hai,\nAapka pyaar hi mera sahara hai.",
             "Tere deedar se hi din banta hai,\nYeh dil sirf aapke liye dhadakta hai.",
             "Aapki har khushi ko apna banana chahte hain,\nHum aapko apni jaan se zyada chahte hain.",
             "Tere bin yeh saansein adhuri lagti hain,\nAapke sath har khushi poori lagti hai.",
@@ -803,11 +803,11 @@
             "Tere sath har raat ek haseen khwab lagti hai,\nAapki yaad har pal mere sath jagti hai.",
             "Aapki hansi meri duniya ki sabse badi daulat hai,\nAapka pyaar hi meri sabse badi taakat hai.",
             "Tere ishq mein humne khud ko kho diya hai,\nLekin aapko paakar sab kuch paas liya hai.",
-            "Aapki baaton mein ek alag hi sukoon milta hai,\nAapka naam sunte hi yeh dil khil uthta istah.",
+            "Aapki baaton mein ek alag hi sukoon milta hai,\nAapka naam sunte hi yeh dil khil uthta hai.",
             "Tere bina ek pal bhi sadiyon jaisa lagta hai,\nYeh dil bas aapke liye hi dhadakta hai.",
             "Aapki har ek khwahish meri poori ho, bas yahi dua hai,\nAapse milkar hi meri zindagi khubsurat hui hai.",
             "Tere ishq mein fanaa hone ka nasha hi alag hai,\nTumhare sath har pal bada pyara sa lagta hai.",
-            "Aapki ankhon से hi mera sara jahaan roshan hai,\nAapka pyaar hi mera sabse bada aashiyana hai.",
+            "Aapki ankhon se hi mera sara jahaan roshan hai,\nAapka pyaar hi mera sabse bada aashiyana hai.",
             "Tere sath bitaya har lamha yaadgar ban jata hai,\nYeh dil aapke bina ek pal bhi nahi reh pata hai."
         ];
 
@@ -953,1071 +953,6 @@
             }
         }
 
-        // --- FIXED QUEUE BUILDER WITH PROPER MAPPING FOR SEARCH RESULTS ---
-        function buildQueueUI() {
-            const queueList = document.getElementById('queue-list');
-            const searchInput = document.getElementById('queue-search');
-            const query = searchInput ? searchInput.value.toLowerCase().trim() : "";
-            
-            if (playlistArray.length === 0) return;
-            
-            queueList.innerHTML = ''; 
-            const currentIndex = player.getPlaylistIndex ? player.getPlaylistIndex() : -1;
-            
-            playlistArray.forEach((videoId, arrayIndex) => {
-                const realIndex = originalPlaylistMap[arrayIndex] !== undefined ? originalPlaylistMap[arrayIndex] : arrayIndex;
-                let trackData = metadataCache[realIndex] || { title: `Track ${realIndex + 1}`, artist: "YouTube Music" };
-                
-                if (trackData.title.startsWith("Track ") && player.getVideoData) {
-                    const vd = player.getVideoData();
-                    if (vd && vd.video_id === videoId && vd.title) {
-                        trackData = { title: vd.title, artist: vd.author || "YouTube Music" };
-                        metadataCache[realIndex] = trackData;
-                    }
-                }
-
-                if (query) {
-                    const queryWords = query.split(/\s+/);
-                    const targetText = `${trackData.title} ${trackData.artist}`.toLowerCase();
-                    const matchesAll = queryWords.every(word => targetText.includes(word));
-                    if (!matchesAll) return; 
-                }
-
-                const item = document.createElement('div');
-                item.className = 'queue-item' + (realIndex === currentIndex ? ' active' : '');
-                
-                item.innerHTML = `
-                    <span class="queue-index">${realIndex + 1}</span>
-                    <span class="queue-title">${trackData.title}</span>
-                    <span class="queue-artist">${trackData.artist}</span>
-                `;
-                
-                // FIXED: Uses realIndex to guarantee that filtered search results trigger the correct song index
-                item.onclick = (e) => {
-                    e.stopPropagation();
-                    player.playVideoAt(realIndex);
-                    document.getElementById('queue-panel').classList.remove('show');
-                };
-
-                queueList.appendChild(item);
-            });
-        }
-
-        function filterQueue() {
-            buildQueueUI();
-        }
-
-        function updatePlayPauseUI() {
-            const playBtn = document.getElementById('play-btn');
-            const playIcon = document.getElementById('play-icon');
-            const pauseIcon = document.getElementById('pause-icon');
-            const albumArt = document.getElementById('album-art');
-
-            if (isPlaying) {
-                playBtn.classList.add('playing');
-                playIcon.style.display = "none";
-                pauseIcon.style.display = "block";
-                albumArt.style.animationPlayState = 'running';
-            } else {
-                playBtn.classList.remove('playing');
-                playIcon.style.display = "block";
-                pauseIcon.style.display = "none";
-                albumArt.style.animationPlayState = 'paused';
-            }
-        }
-
-        function togglePlay() {
-            if (player && typeof player.getPlayerState === 'function') {
-                if (isPlaying) {
-                    player.pauseVideo();
-                } else {
-                    player.playVideo();
-                }
-            }
-        }
-
-        function toggleShuffle() {
-            if (player && typeof player.setShuffle === 'function') {
-                isShuffled = !isShuffled;
-                player.setShuffle(isShuffled);
-                document.getElementById('shuffle-btn').classList.toggle('active', isShuffled);
-            }
-        }
-
-        function updateProgressBar() {
-            if (player && player.getDuration) {
-                const currentTime = player.getCurrentTime();
-                const duration = player.getDuration();
-                
-                if (duration > 0) {
-                    const percent = (currentTime / duration) * 100;
-                    document.getElementById('progress-fill').style.width = percent + '%';
-                    document.getElementById('time-text').innerText = formatTime(currentTime) + " / " + formatTime(duration);
-                }
-            }
-        }
-
-        function formatTime(seconds) {
-            if (!seconds || isNaN(seconds)) return "0:00";
-            const min = Math.floor(seconds / 60);
-            const sec = Math.floor(seconds % 60);
-            return min + ":" + (sec < 10 ? "0" : "") + sec;
-        }
-
-        function seekSong(event) {
-            if (player && player.getDuration) {
-                const duration = player.getDuration();
-                if (duration > 0) {
-                    const progressBar = document.getElementById('progress-bg');
-                    const width = progressBar.clientWidth;
-                    const clickX = event.offsetX;
-                    const seekToTime = (clickX / width) * duration;
-                    player.seekTo(seekToTime, true);
-                }
-            }
-        }
-
-        window.addEventListener('keydown', (e) => {
-            if (e.code === 'Space') {
-                if (document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA') {
-                    e.preventDefault();
-                    togglePlay();
-                }
-            }
-        });
-
-        if ('mediaSession' in navigator) {
-            navigator.mediaSession.setActionHandler('play', () => { if (!isPlaying) togglePlay(); });
-            navigator.mediaSession.setActionHandler('pause', () => { if (isPlaying) togglePlay(); });
-            navigator.mediaSession.setActionHandler('nexttrack', () => { if(player) player.nextVideo(); });
-            navigator.mediaSession.setActionHandler('previoustrack', () => { if(player) player.previousVideo(); });
-        }
-    </script>
-</body>
-</html>            background-position: center;
-            background-repeat: no-repeat;
-            transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-            z-index: -2;
-        }
-
-        #bg-day {
-            background-image: url('kolkata.png');
-            opacity: 1;
-        }
-
-        #bg-night {
-            background-image: url('kolkatanight.png');
-            opacity: 0;
-        }
-
-        body.dark-mode #bg-day {
-            opacity: 0;
-        }
-
-        body.dark-mode #bg-night {
-            opacity: 1;
-        }
-
-        /* DARK MODE OVERLAY DIMMER WITH VINTAGE GLOW */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0);
-            pointer-events: none;
-            transition: background 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-            z-index: -1;
-        }
-        body.dark-mode::before {
-            background: rgba(10, 10, 20, 0.55);
-        }
-
-        #yt-player-container {
-            position: absolute; width: 1px; height: 1px; overflow: hidden; opacity: 0; pointer-events: none; z-index: -10;
-        }
-
-        /* --- VERTICAL THEME TOGGLE SWITCH CENTERED ON THE LEFT --- */
-        .theme-toggle-container {
-            position: fixed;
-            left: 30px;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 100;
-            display: flex;
-            align-items: center;
-        }
-
-        .theme-switch {
-            position: relative;
-            display: inline-block;
-            width: 34px;
-            height: 64px;
-        }
-
-        .theme-switch input {
-            opacity: 0;
-            width: 0;
-            height: 0;
-        }
-
-        .theme-slider {
-            position: absolute;
-            cursor: pointer;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background-color: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            border-radius: 34px;
-        }
-
-        .theme-slider:before {
-            position: absolute;
-            content: "";
-            height: 26px;
-            width: 26px;
-            left: 3px;
-            top: 3px;
-            background-color: white;
-            transition: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            border-radius: 50%;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%231a1a1a"><path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36l-1.06 1.06c-.39.39-.39 1.03 0 1.41.39.39 1.03.39 1.41 0l1.06-1.06c-.39-.39-.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0z"/></svg>');
-            background-size: 14px;
-            background-repeat: no-repeat;
-            background-position: center;
-        }
-
-        input:checked + .theme-slider {
-            background-color: rgba(20, 20, 20, 0.6);
-            border-color: rgba(255, 255, 255, 0.25);
-        }
-
-        input:checked + .theme-slider:before {
-            transform: translateY(30px);
-            background-color: #222;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23fff"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-3.03 0-5.5-2.47-5.5-5.5 0-1.82.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/></svg>');
-        }
-
-        .top-nav {
-            display: flex; justify-content: flex-end; align-items: center;
-            padding: 20px 40px; background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%);
-            z-index: 2;
-        }
-
-        .nav-right {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            position: relative;
-        }
-
-        .platform-btn, .suggestion-pill-btn {
-            color: white; text-decoration: none; font-size: 0.85rem;
-            font-weight: 500; padding: 7px 14px;
-            border-radius: 20px; backdrop-filter: blur(10px); transition: all 0.3s ease;
-            display: flex; align-items: center; gap: 6px; cursor: pointer;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            outline: none;
-            font-family: 'Outfit', sans-serif;
-        }
-        
-        .spotify-btn { background: rgba(30, 215, 96, 0.2); }
-        .spotify-btn:hover { background: rgba(30, 215, 96, 0.35); transform: translateY(-1px); }
-        
-        .yt-btn { background: rgba(255, 0, 0, 0.2); }
-        .yt-btn:hover { background: rgba(255, 0, 0, 0.35); transform: translateY(-1px); }
-
-        .suggestion-pill-btn { 
-            background: rgba(255, 255, 255, 0.1); 
-        }
-        .suggestion-pill-btn:hover { 
-            background: rgba(255, 255, 255, 0.25); 
-            transform: translateY(-1px); 
-        }
-
-        .platform-btn svg { width: 14px; height: 14px; fill: currentColor; }
-
-        /* --- SPEECH BUBBLE POPUP --- */
-        .bubble-dropdown {
-            position: absolute;
-            top: 45px;
-            right: 150px;
-            background: rgba(20, 20, 20, 0.85);
-            backdrop-filter: blur(35px);
-            -webkit-backdrop-filter: blur(35px);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            padding: 24px 20px;
-            border-radius: 40px; 
-            width: 280px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
-            display: none;
-            flex-direction: column;
-            gap: 12px;
-            z-index: 100;
-            animation: popUpBubble 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .bubble-dropdown.show { display: flex; }
-
-        .bubble-dropdown::after {
-            content: '';
-            position: absolute;
-            top: -8px;
-            right: 45px;
-            width: 14px;
-            height: 14px;
-            background: rgba(20, 20, 20, 0.95);
-            border-top: 1px solid rgba(255, 255, 255, 0.15);
-            border-left: 1px solid rgba(255, 255, 255, 0.15);
-            transform: rotate(45deg);
-        }
-
-        @keyframes popUpBubble { from { transform: scale(0.9) translateY(-8px); opacity: 0; } to { transform: scale(1) translateY(0); opacity: 1; } }
-
-        .bubble-label {
-            font-size: 0.75rem;
-            font-weight: 400;
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: -6px;
-            padding-left: 8px;
-        }
-
-        .bubble-input {
-            background: rgba(255, 255, 255, 0.06);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            padding: 10px 14px;
-            border-radius: 20px;
-            color: white;
-            font-family: 'Outfit', sans-serif;
-            font-size: 0.85rem;
-            outline: none;
-            transition: all 0.2s;
-            text-align: center;
-        }
-        .bubble-input:focus {
-            border-color: rgba(255, 255, 255, 0.4);
-            background: rgba(255, 255, 255, 0.12);
-        }
-        .bubble-input::placeholder { color: rgba(255, 255, 255, 0.4); }
-
-        .bubble-submit-btn {
-            background: white;
-            color: #1a1a1a;
-            border: none;
-            padding: 9px;
-            border-radius: 20px;
-            font-family: 'Outfit', sans-serif;
-            font-size: 0.85rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s;
-            margin-top: 4px;
-        }
-        .bubble-submit-btn:hover { background: #f0f0f0; transform: translateY(-1px); }
-
-        .hero-title {
-            text-align: center; text-shadow: 0px 10px 30px rgba(0,0,0,0.8); margin-top: -2vh; 
-            z-index: 2;
-        }
-        .hero-title h1 {
-            font-family: 'Yatra One', system-ui; font-size: 6.5rem; font-weight: 400;
-            letter-spacing: 2px; line-height: 1.1; color: #fffaf0;
-            text-shadow: 0 4px 20px rgba(0,0,0,0.6);
-        }
-
-        .player-wrapper {
-            display: flex; flex-direction: column; align-items: center; width: 100%; margin-bottom: 40px; position: relative;
-            z-index: 2;
-        }
-
-        .mood-tagline-container {
-            width: 90%;
-            max-width: 580px;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: transparent;
-            border: none;
-            padding: 4px 10px;
-            position: relative;
-        }
-
-        .mood-tagline {
-            font-size: 0.85rem;
-            font-weight: 300;
-            letter-spacing: 0.4px;
-            color: rgba(255, 255, 255, 0.95);
-            font-style: italic;
-            text-shadow: 0 2px 6px rgba(0,0,0,0.9);
-            text-align: center;
-            line-height: 1.5;
-            white-space: pre-line;
-        }
-
-        .safari-refresh-btn {
-            background: rgba(255, 255, 255, 0.15);
-            color: white;
-            border: none;
-            width: 26px;
-            height: 26px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            position: absolute;
-            right: 0;
-            backdrop-filter: blur(10px);
-        }
-        .safari-refresh-btn:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: rotate(90deg);
-        }
-        .safari-refresh-btn svg {
-            width: 13px;
-            height: 13px;
-            fill: currentColor;
-        }
-
-        /* --- QUEUE PANEL WITH ADVANCED SMART SEARCH --- */
-        .queue-panel {
-            position: absolute;
-            bottom: 85px; 
-            width: 90%; 
-            max-width: 580px; 
-            background: rgba(15, 15, 15, 0.85); 
-            backdrop-filter: blur(35px); -webkit-backdrop-filter: blur(35px); 
-            border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 24px;
-            padding: 15px; display: none; 
-            flex-direction: column; gap: 10px; 
-            max-height: 420px; 
-            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
-            z-index: 5;
-        }
-        .queue-panel.show { display: flex; animation: slideUp 0.3s ease-out; }
-        @keyframes slideUp { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
-
-        .queue-search-input {
-            width: 100%;
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            padding: 10px 16px;
-            border-radius: 14px;
-            color: white;
-            font-family: 'Outfit', sans-serif;
-            font-size: 0.85rem;
-            outline: none;
-            transition: all 0.2s;
-        }
-        .queue-search-input:focus {
-            border-color: rgba(255, 255, 255, 0.4);
-            background: rgba(255, 255, 255, 0.12);
-        }
-        .queue-search-input::placeholder { color: rgba(255, 255, 255, 0.4); }
-
-        .queue-list-inner {
-            max-height: 330px;
-            overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-            gap: 2px;
-        }
-        .queue-list-inner::-webkit-scrollbar { width: 6px; }
-        .queue-list-inner::-webkit-scrollbar-track { background: transparent; }
-        .queue-list-inner::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 10px; }
-
-        .queue-item {
-            padding: 12px 10px;
-            cursor: pointer; transition: all 0.2s; 
-            display: flex; justify-content: space-between; align-items: center; 
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        .queue-item:last-child { border-bottom: none; }
-        .queue-item:hover { background: rgba(255, 255, 255, 0.12); border-radius: 10px; }
-        .queue-item.active { background: rgba(255, 255, 255, 0.25); border-radius: 10px; }
-        
-        .queue-index { opacity: 0.4; font-size: 0.75rem; width: 25px; flex-shrink: 0; }
-        .queue-title { flex-grow: 1; font-size: 0.85rem; font-weight: 400; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-        .queue-artist { font-size: 0.75rem; opacity: 0.5; padding-left: 15px; white-space: nowrap; text-align: right; font-weight: 300; }
-
-        .glass-player {
-            width: 90%; max-width: 580px; 
-            background: rgba(20, 20, 20, 0.65);
-            backdrop-filter: blur(35px); -webkit-backdrop-filter: blur(35px); 
-            border: 1px solid rgba(255, 255, 255, 0.1); 
-            border-radius: 40px; 
-            padding: 10px 14px; 
-            display: flex; align-items: center; gap: 10px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.5);
-            z-index: 2; 
-            transition: box-shadow 0.6s ease, border-color 0.6s ease;
-        }
-
-        body.dark-mode .glass-player {
-            box-shadow: 0 15px 50px rgba(0,0,0,0.8), 0 0 25px rgba(255, 255, 255, 0.05);
-            border-color: rgba(255, 255, 255, 0.2);
-        }
-
-        #album-art {
-            width: 42px; height: 42px; border-radius: 50%; object-fit: cover;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            border: 2px solid rgba(255, 255, 255, 0.15);
-            background: rgba(0,0,0,0.5);
-            flex-shrink: 0;
-            animation: spin 8s linear infinite; animation-play-state: paused;
-        }
-        @keyframes spin { 100% { transform: rotate(360deg); } }
-
-        .song-info { 
-            flex-grow: 1; display: flex; flex-direction: column; justify-content: center; 
-            overflow: hidden; gap: 2px;
-            max-width: 170px;
-        }
-        
-        .title-artist-row { display: flex; flex-direction: column; line-height: 1.2; }
-
-        #now-playing { 
-            font-size: 0.85rem; font-weight: 500; 
-            white-space: nowrap; overflow: hidden; text-overflow: ellipsis; 
-            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
-        }
-        #channel-info { 
-            font-size: 0.65rem; font-weight: 300; color: rgba(255, 255, 255, 0.6); 
-            white-space: nowrap; overflow: hidden; text-overflow: ellipsis; 
-        }
-
-        .progress-row { display: flex; align-items: center; gap: 6px; margin-top: 4px; }
-
-        .progress-bar-bg {
-            flex-grow: 1; height: 3px; background: rgba(255, 255, 255, 0.2); border-radius: 2px; 
-            position: relative; cursor: pointer; overflow: hidden;
-        }
-        #progress-fill { height: 100%; width: 0%; background: white; border-radius: 2px; transition: width 0.1s linear; pointer-events: none; }
-        #time-text { font-size: 0.5rem; font-weight: 400; color: rgba(255, 255, 255, 0.6); letter-spacing: 0.3px; min-width: 40px;}
-
-        .controls { 
-            display: flex; 
-            align-items: center; 
-            gap: 6px; 
-            margin-left: auto;
-        }
-        
-        .secondary-btn { 
-            background: transparent; color: white; border: none; 
-            display: flex; align-items: center; justify-content: center;
-            cursor: pointer; opacity: 0.6; transition: all 0.2s; padding: 3px;
-        }
-        .secondary-btn:hover { opacity: 1; transform: scale(1.1); }
-        .secondary-btn svg { width: 15px; height: 15px; fill: currentColor; }
-        .secondary-btn.active { color: #fff; opacity: 1; }
-        
-        .main-btn {
-            background: white; color: #1a1a1a; 
-            border: none; border-radius: 50%;
-            width: 32px; height: 32px; display: flex;
-            align-items: center; justify-content: center; cursor: pointer; 
-            transition: transform 0.2s, box-shadow 0.2s;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            flex-shrink: 0;
-        }
-        .main-btn:hover { transform: scale(1.05); }
-        .main-btn svg { width: 14px; height: 14px; fill: currentColor; margin-left: 1px; }
-        .main-btn.playing svg { margin-left: 0; }
-        
-        .queue-btn-svg { width: 16px !important; height: 16px !important; }
-    </style>
-</head>
-<body>
-
-    <div class="bg-layer" id="bg-day"></div>
-    <div class="bg-layer" id="bg-night"></div>
-
-    <div id="yt-player-container">
-        <div id="yt-player"></div>
-    </div>
-
-    <!-- LEFT SIDE VERTICAL CENTERED DARK MODE SLIDER -->
-    <div class="theme-toggle-container">
-        <label class="theme-switch" title="Toggle Dark Mode">
-            <input type="checkbox" id="dark-mode-toggle" onchange="toggleDarkMode()">
-            <span class="theme-slider"></span>
-        </label>
-    </div>
-
-    <nav class="top-nav">
-        <div class="nav-right">
-            <!-- SUGGESTION BUTTON -->
-            <button class="suggestion-pill-btn" onclick="toggleSuggestionBubble(event)">
-                Suggestions
-            </button>
-
-            <!-- SPEECH BUBBLE FORM -->
-            <div class="bubble-dropdown" id="suggestion-bubble">
-                <div style="display: flex; flex-direction: column; gap: 10px;">
-                    <label class="bubble-label">Name</label>
-                    <input type="text" id="sug-name" class="bubble-input" placeholder="Your Name" autocomplete="off">
-                    
-                    <label class="bubble-label">Suggestions</label>
-                    <input type="text" id="sug-song" class="bubble-input" placeholder="Song Name" autocomplete="off">
-                    
-                    <button type="button" class="bubble-submit-btn" onclick="submitToGoogleSheet()">Submit</button>
-                </div>
-            </div>
-
-            <!-- PLATFORM BUTTONS -->
-            <a href="https://spotify.com" target="_blank" class="platform-btn spotify-btn">
-                <svg viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.599-.12-.42.18-.78.599-.9 4.5-1.02 8.46-.6 11.7 1.44.36.18.48.66.282 1.02zm1.44-3.84c-.301.42-.84.54-1.26.24-3.24-1.98-8.16-2.58-11.94-1.44-.48.18-1.02-.06-1.2-.54-.18-.48.06-1.02.54-1.2 4.2-1.26 9.6-0.6 13.38 1.68.42.3.54.84.24 1.26zm.12-4.08C15.24 7.32 8.82 7.08 5.1 8.22c-.6.18-1.26-.18-1.44-.78-.18-.6.18-1.26.78-1.44 4.38-1.38 11.58-1.08 16.02 1.56.54.3.72 1.02.42 1.56-.3.54-1.02.72-1.56.42z"/></svg>
-                Spotify
-            </a>
-            <a href="https://music.youtube.com/playlist?list=PLYfPZBdSW0-U" target="_blank" class="platform-btn yt-btn">
-                <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-                YT Music
-            </a>
-        </div>
-    </nav>
-
-    <div class="hero-title">
-        <h1>नॉस्टैल्जिया<br>बीट्स</h1>
-    </div>
-
-    <div class="player-wrapper">
-        
-        <!-- QUEUE PANEL WITH ADVANCED SEARCH -->
-        <div id="queue-panel" class="queue-panel">
-            <input type="text" id="queue-search" class="queue-search-input" placeholder="Search by song name or artist..." oninput="filterQueue()" autocomplete="off">
-            <div id="queue-list" class="queue-list-inner">
-                <div style="text-align: center; font-size: 0.85rem; opacity: 0.6; padding: 20px;">
-                    Connecting to YouTube Playlist...
-                </div>
-            </div>
-        </div>
-
-        <div class="mood-tagline-container" id="tagline-container">
-            <div class="mood-tagline" id="mood-tagline">Loading romantic vibes...</div>
-            <button class="safari-refresh-btn" onclick="shuffleTagline()" title="Change Shayri">
-                <svg viewBox="0 0 24 24"><path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/></svg>
-            </button>
-        </div>
-
-        <div class="glass-player">
-            <img id="album-art" src="https://i.ytimg.com/vi/dQw4w9WgXcQ/hqdefault.jpg" alt="Album Art">
-            
-            <div class="song-info">
-                <div class="title-artist-row">
-                    <div id="now-playing">Nostalgia Beats Selection</div>
-                    <div id="channel-info">Classic Retro Playlist</div>
-                </div>
-                
-                <div class="progress-row">
-                    <div id="time-text">0:00 / 0:00</div>
-                    <div class="progress-bar-bg" id="progress-bg" onclick="seekSong(event)">
-                        <div id="progress-fill"></div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="controls">
-                <button id="shuffle-btn" class="secondary-btn" onclick="toggleShuffle()" title="Shuffle Playlist">
-                    <svg viewBox="0 0 24 24"><path d="M10.59 9.17L5.41 4 4 5.41l5.17 5.17 1.42-1.41zM14.5 4l2.04 2.04L4 18.59 5.41 20 17.96 7.46 20 9.5V4h-5.5zm.33 9.41l-1.41 1.41 3.13 3.13L14.5 20H20v-5.5l-2.04 2.04-3.13-3.13z"/></svg>
-                </button>
-                
-                <button id="repeat-btn" class="secondary-btn" onclick="toggleRepeat()" title="Repeat Current Track">
-                    <svg viewBox="0 0 24 24"><path d="M7 7h10v3l4-4-4-4v3H5v6h2V7zm10 10H7v-3l-4 4 4 4v-3h12v-6h-2v4z"/></svg>
-                </button>
-                
-                <button class="secondary-btn" onclick="player.previousVideo()" title="Previous Track">
-                    <svg viewBox="0 0 24 24"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
-                </button>
-                
-                <button id="play-btn" class="main-btn" onclick="togglePlay()">
-                    <svg id="play-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                    <svg id="pause-icon" viewBox="0 0 24 24" style="display:none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
-                </button>
-                
-                <button class="secondary-btn" onclick="player.nextVideo()" title="Next Track">
-                    <svg viewBox="0 0 24 24"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg>
-                </button>
-                
-                <button class="secondary-btn" onclick="toggleQueue(event)" title="Show Queue">
-                    <svg class="queue-btn-svg" viewBox="0 0 24 24"><path d="M15 6H3v2h12V6zm0 4H3v2h12v-2zM3 16h8v-2H3v2zM17 6v8.18c-.31-.11-.65-.18-1-.18-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3V8h3V6h-5z"/></svg>
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <script src="https://www.youtube.com/iframe_api"></script>
-    <script>
-        function toggleDarkMode() {
-            const isDark = document.getElementById('dark-mode-toggle').checked;
-            if (isDark) {
-                document.body.classList.add('dark-mode');
-            } else {
-                document.body.classList.remove('dark-mode');
-            }
-        }
-
-        function toggleSuggestionBubble(e) {
-            e.stopPropagation();
-            const bubble = document.getElementById('suggestion-bubble');
-            bubble.classList.toggle('show');
-        }
-
-        function toggleQueue(e) {
-            e.stopPropagation();
-            const queuePanel = document.getElementById('queue-panel');
-            queuePanel.classList.toggle('show');
-            if(queuePanel.classList.contains('show')) {
-                buildQueueUI();
-                document.getElementById('queue-search').focus();
-            }
-        }
-
-        window.addEventListener('click', (e) => {
-            const bubble = document.getElementById('suggestion-bubble');
-            const queuePanel = document.getElementById('queue-panel');
-            
-            if (!bubble.contains(e.target) && !e.target.closest('.suggestion-pill-btn')) {
-                bubble.classList.remove('show');
-            }
-
-            if (!queuePanel.contains(e.target) && !e.target.closest('[title="Show Queue"]')) {
-                queuePanel.classList.remove('show');
-            }
-        });
-
-        const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyefDw2Rpco9WXKO4_M4zYzgUBodFviuaEJlFhLblTAjOGwb8v8HSZF6tLLml-BIaBD/exec";
-
-        function submitToGoogleSheet() {
-            const name = document.getElementById('sug-name').value.trim();
-            const song = document.getElementById('sug-song').value.trim();
-
-            if (!name || !song) {
-                alert("Please fill in both fields.");
-                return;
-            }
-
-            const url = `${WEB_APP_URL}?name=${encodeURIComponent(name)}&song=${encodeURIComponent(song)}`;
-
-            fetch(url, { method: 'GET', mode: 'no-cors' })
-                .then(() => {
-                    document.getElementById('sug-name').value = '';
-                    document.getElementById('sug-song').value = '';
-                    document.getElementById('suggestion-bubble').classList.remove('show');
-                })
-                .catch(err => {
-                    document.getElementById('sug-name').value = '';
-                    document.getElementById('sug-song').value = '';
-                    document.getElementById('suggestion-bubble').classList.remove('show');
-                });
-        }
-
-        const romanticShayris = [
-            "Aapki aankhon mein khoya rehta hoon,\nKhuda se bas aap hi ko maangta rehta hoon.",
-            "Dil ki dhadkan ban kar aap bas gaye ho,\nHumari har khushi mein aap sama gaye ho.",
-            "Aapki ek jhalak se din ban jata hai,\nAapko dekhe bina dil kahaan maanta hai.",
-            "Chaand se pyaari aapki yeh muskaan hai,\nAap hi meri pehli aur aakhri jaan hain.",
-            "Aapka haath haathon mein jo aa jaye,\nLage jaise saari jannat mujhe mil jaye.",
-            "Palkon par sajaya hai aapko pyaar se,\nJaise phool ko sajate hain bahaar se.",
-            "Aapki baaton mein kuch aisi baat hai,\nAapke bina adhuri har ek raat hai.",
-            "Meri har saans mein tera hi naam hai,\nTujhse hi juda mera yeh sara jahaan hai.",
-            "Tujhe dekh kar yehi khayal aata hai,\nTu khuda ka sabse haseen tohfa laata hai.",
-            "Aapki khushboo in hawaon mein rehti hai,\nMeri rooh aap se hi yehi kehti hai.",
-            "Nazrein milti hain toh dil machal jata hai,\nAapko paakar mera har gham nikal jata hai.",
-            "Tere chehre se nazar nahi hatati,\nYeh mohabbat hai jo kabhi nahi ghatati.",
-            "Aapki har ada par fida yeh dil mera hai,\nIs zameen se lekar aasmaan tak bas tera hai.",
-            "Chhupa loon aapko is dil mein is tarah,\nJaise phool mein chhupi ho khushboo ki tarah.",
-            "Aapki hasi se roshan yeh jahaan hota hai,\nAapke hone se hi mera din poora hota hai.",
-            "Dil ki kitaab mein naam aapka hai,\nMeri har khwahish ka anjaam aapka hai.",
-            "Tujhse milne ki chah jab dil mein jagti hai,\nYeh duniya mujhe aur bhi khoobsurat lagti hai.",
-            "Aapki palke jab jab jhukti hain,\nMeri khushiyaan aur bhi badh jati hain.",
-            "Tera pyaar meri taakat ban gaya hai,\nHar rasta mera aasan ho gaya hai.",
-            "Khuda se aur kya maangun main aapse milkar,\nAap jo mile ho zindagi khil gayi hai khil kar.",
-            "Aapki aankhon mein doob jane ko dil chahta hai,\nYeh safar yunhi umar bhar chalta jata hai.",
-            "Bina soche aapko yaad karte hain,\nHum aapse behad pyaar karte hain.",
-            "Aapki khushi se hi mera chehra khilta hai,\nYeh dil aapko dekh kar hi sukoon milta hai.",
-            "Meri har dua ka bas ek hi naam hai,\nAapki hansi mere jeene ka paigham hai.",
-            "Aapki yadon mein raat guzar jati hai,\nSubah hote hi tasveer nazar aati hai.",
-            "Tujhse juda hokar ek pal bhi na ji sakenge,\nTere bin yeh saansein bhi gair lagne lagenge.",
-            "Aapke aane se zindagi mein rang aaye hain,\nHumne toh bas aapko hi apna banaye hain.",
-            "Tere naam se meri pehchaan ho gayi hai,\nMohabbat tujhse beshumaar ho gayi hai.",
-            "Aapki har ek baat dil ko chhoo jati hai,\nYeh rooh sirf aapke paas aana chahti hai.",
-            "Chand lamhon ki nahi hai yeh chahat,\nSadiyon tak rahegi aapse yeh mohabbat.",
-            "Aapki baahon mein sukoon milta hai,\nJaise har dard ko naya marham milta hai.",
-            "Tere bina yeh zindagi veeraan lagti hai,\nTu paas ho toh har khushi milti hai.",
-            "Aapko dekh kar dhadkan badh jati hai,\nYeh deewangi ab hadd se badh jati hai.",
-            "Meri zindagi ki sabse haseen shaam ho tum,\nMere dil ka sabse pyara armaan ho tum.",
-            "Aapki har khushi par jaan nisaar hai,\nKyunki aapse humein behad pyaar hai.",
-            "Tera chehra meri aankhon mein basa hai,\nJaise rooh mein koi gehra nasha hai.",
-            "Aapki muskaan meri taakat hai,\nAapka pyaar hi meri ibadat hai.",
-            "Jab se aap mile ho zindagi badal gayi hai,\nHar khushi mere qareeb aa gayi hai.",
-            "Tere bina ye raat lambi lagti hai,\nAapki yaad har pal sang lagti hai.",
-            "Aapki hansi meri duniya ka sukoon hai,\nAapke bina sab kuch jaise junoon hai.",
-            "Aapko dil mein is tarah basa liya hai,\nKi apne aap ko bhi bhula diya hai.",
-            "Tere ishq mein ek alag hi nasha hai,\nTu hi meri manzil, tu hi mera rasta hai.",
-            "Aapki aankhon ka nasha hi kuch alag hai,\nInhein dekh kar jeena aur bhi rochak hai.",
-            "Aapki har ek ada par dil qurban hai,\nMeri jaan aap par hi qurbaan hai.",
-            "Tere sath bitaya har pal khaas hota hai,\nYeh dil hamesha tere aas-paas hota hai.",
-            "Aapki har baat mein jadoo sa lagta hai,\nYeh dil aap par hi fida sa rehta hai.",
-            "Tere ishq ki roshni aisi chhayi hai,\nKi har andhera door bhagayi hai.",
-            "Aapki baaton se dil ko qarar milta hai,\nAapka sath jaise uparwale ka pyaar milta hai.",
-            "Meri khwahishon ka bas ek hi kinara hai,\nAapka pyaar hi mera sahara hai.",
-            "Tere deedar se hi din banta hai,\nYeh dil sirf aapke liye dhadakta hai.",
-            "Aapki har khushi ko apna banana chahte hain,\nHum aapko apni jaan se zyada chahte hain.",
-            "Tere bin yeh saansein adhuri lagti hain,\nAapke sath har khushi poori lagti hai.",
-            "Aapki palkon ki chhaon mein mil jaye,\nMeri zindagi ko nayi subah mil jaye.",
-            "Tere ishq mein doobkar yeh dil muskurata hai,\nHar pal bas aapko hi bulata hai.",
-            "Aapki ek hansi se gham door ho jate hain,\nHum aapke pyaar mein mashhoor ho jate hain.",
-            "Tere aane se zindagi gulzaar ho gayi hai,\nYeh duniya kitni haseen yaar ho gayi hai.",
-            "Aapki yaadon ka silsila jo chalta hai,\nYeh dil khushi se machalta hai.",
-            "Tere ishq mein fida hone ko jee chahta hai,\nHar pal aapke kareeb aane ko jee chahta hai.",
-            "Aapki har adaa par dil haar baithe hain,\nHum aapse kitna pyaar karte hain yeh maan baithe hain.",
-            "Tere bina yeh dil kahin lagta nahi,\nTu na ho toh kuch bhi banta nahi.",
-            "Aapki khushboo se mehik uthta hai ghar mera,\nAapke aane se hua roshan yeh savera.",
-            "Tere ishq ka jadoo aisa chaya hai,\nKi maine sab kuch bhula kar bas tujhe apnaya hai.",
-            "Aapki aankhon mein apna aashiyaana dikhta hai,\nYeh pyaar ab shabdon mein kahan likhta hai.",
-            "Tere sath jeene ki khwahish hai,\nTu hi meri pehli aur aakhri farmayish hai.",
-            "Aapki har ek muskaan meri amanat hai,\nAapka sath meri sabse badi daulat hai.",
-            "Tere ishq mein pagal hone ka maza hi alag hai,\nTu paas ho toh yeh jahaan bada alag hai.",
-            "Aapki baahon mein aakar sab bhool jata hoon,\nMain bas aapko hi chahta hoon.",
-            "Tere bina yeh zindagi ek saza hai,\nTu mil jaye toh har dua poori waja hai.",
-            "Aapki har khushi meri manzil hai,\nAapka pyaar hi mera hasil hai.",
-            "Tere ishq mein rang gayi hai har subah meri,\nTu hi hai ab kahani aur dua meri.",
-            "Aapki palkon tale ghar banana chahte hain,\nHum aapko apni duniya banana chahte hain.",
-            "Tere bina ek pal sadiyon jaisa lagta hai,\nYeh dil bas aapke liye tadapta hai.",
-            "Aapki har ada par dil fida hota hai,\nAapse milkar hi yeh dil poora hota hai.",
-            "Tere ishq mein doobkar ek sukoon milta hai,\nJaise sookha hua phool phir se khilita hai.",
-            "Aapki aawaz kaan mein ghul jati hai,\nMeri har pareshani wahin tham jati hai.",
-            "Tere sath har safar suhana lagta hai,\nTu jo rooth jaye toh zamana begana lagta hai.",
-            "Aapki khubsurati ka koi jawab nahi hai,\nAapke jaisa is duniya mein koi khwab nahi hai.",
-            "Tere ishq ne mujhe jeena sikhaya hai,\nTumne hi mujhe apna banaya hai.",
-            "Aapki har ek khwahish meri poori ho,\nZindagi mein kabhi na koi doori ho.",
-            "Tere bina yeh dil udas rehta hai,\nYeh sirf aapke liye hi paas rehta hai.",
-            "Aapki hansi meri rooh ko chhoo jati hai,\nYeh mohabbat aur bhi gehrai mein utar jati hai.",
-            "Tere sath bitaya har lamha yaadgar hai,\nHumein aapse beinteha pyaar hai.",
-            "Aapki ankhon mein jannat dikhti hai,\nYeh mohabbat sachhi kitni, yeh rooh likhti hai.",
-            "Tere ishq mein hum is kadar kho gaye hain,\nKi sab kuch bhula kar aapke ho gaye hain.",
-            "Aapki har khushi mein meri khushi hai,\nTere bina yeh zindagi adhoori hai.",
-            "Tere sath khamoshi bhi baatein karti hai,\nYeh rooh sirf aapse pyaar karti hai.",
-            "Aapki baaton mein ek alag hi kashish hai,\nTu hi meri pehli aur aakhri khwahish hai.",
-            "Tere ishq ka yeh kaisa asar hua hai,\nKi dil ko sirf aapka hi fitoor hua hai.",
-            "Aapki yaadon ke saaye mein jeete hain,\nHum aapke pyaar ka jaam peete hain.",
-            "Tere bina yeh dharti aur aasmaan soona lagta hai,\nTu paas ho toh har pal ek sapna lagta hai.",
-            "Aapki har ek muskurahat meri taaqat hai,\nAapka sath hona hi meri jannat hai.",
-            "Tere ishq mein aisi deewangi chhayi hai,\nKi bas aap hi aap nazar aayi hai.",
-            "Aapki aankhon mein apna future dekhta hoon,\nMain sirf aapko hi apni jaan manta hoon.",
-            "Tere sath hone se mukammal yeh jahaan hai,\nTu hi mera dil, tu hi meri jaan hai.",
-            "Aapki har ek ada mere dil ko bhaati hai,\nYeh rooh bas aapko hi bulati hai.",
-            "Tere ishq mein fanaa hone ka irada hai,\nYeh dil sirf aapse pyaar karne ka wada hai.",
-            "Aapki baahon mein duniya bhulane ko jee chahta hai,\nYeh dil bas aapke paas aane ko jee chahta hai.",
-            "Tere bina ek lamha bhi saal lagta hai,\nTu paas ho toh har gham khayal lagta hai.",
-            "Aapki khushi ke liye kuch bhi kar jaayenge,\nHum aakhri saans tak aapko chahenge.",
-            "Tere ishq mein dooba hua yeh sansar hai,\nKyunki tu mera sabse haseen pyaar hai.",
-            "Aapki ankhon ki nami hume rula deti hai,\nAapki hansi hume phir se hansa deti hai.",
-            "Tere sath har subah naye rang laati hai,\nYeh mohabbat aur bhi gehrai banati hai.",
-            "Aapki ek jhalak se dil ko qaraar milta hai,\nJaise banjar zameen ko naya pyaar milta hai.",
-            "Tere ishq mein humne yeh duniya bhulayi hai,\nBas aapki tasveer dil mein basayi hai.",
-            "Aapki har baat mere dil mein utar jati hai,\nYeh rooh sirf aapse mohabbat karti hai.",
-            "Tere bina yeh dil kahin chain nahi pata,\nTu na ho toh kuch bhi samajh nahi aata.",
-            "Aapki hansi se roshan yeh saari kayamat hai,\nAapka pyaar hi mere liye sabse badi ibadat hai.",
-            "Tere sath chalna hai mujhe is duniya ke us paar,\nKyunki tujhse hi hai mujhe beinteha pyaar.",
-            "Aapki yaadon mein khona accha lagta hai,\nYeh dil aapke hi sapne dekhta lagta hai.",
-            "Tere ishq mein milne wala dard bhi pyara hai,\nKyunki tu hi mera sabse pyara sahara hai.",
-            "Aapki aankhon ka kajal ban kar rehna hai,\nApne dil ki har baat aapse kehna hai.",
-            "Tere bina yeh zindagi ek adhuri kahani hai,\nTu mil jaye toh poori yeh zindagani hai.",
-            "Aapki har ek khushi meri pehli priority hai,\nAapka sath hi meri sabse badi security hai.",
-            "Tere ishq mein rangne ki chah hai,\nTu hi meri manzil, tu hi mera raah hai.",
-            "Aapki baahon mein milne wala sukoon kahan,\nTu hai toh lagta hai roshan hua saara jahaan.",
-            "Tere sath bitaya har pal ek geet lagta hai,\nTu paas ho toh yeh jahaanmeet lagta hai.",
-            "Aapki hansi pe meri jaan fida hai,\nKhuda se bas aapko hi manga yeh dua hai.",
-            "Tere ishq ka nasha jo chadha hai,\nWoh kabhi utarne wala nahi hai.",
-            "Aapki yaadon ki khushboo har jagah faili hai,\nYeh dil bas aapse milne ke liye machli hai.",
-            "Tere bina jeena ab namumkin sa lagta hai,\nTu hi hai jiske liye yeh dil dhadakta hai.",
-            "Aapki har ek adaa pe dil qurban hai,\nMeri jaan aap par hi mera kuch nahi kurban hai.",
-            "Tere ishq mein aisi khoobsurati payi hai,\nKi duniya ki har khushi mil gayi hai.",
-            "Aapki aankhon mein dekha toh khuda mil gaya,\nBichhda hua dil mujhe phir se mil gaya.",
-            "Tere sath har gham bhool jata hoon,\nMain bas aapko hi apnata hoon.",
-            "Aapki baaton mein ek pyara sa ehsaas hai,\nLgta hai jaise aap hamesha mere aas-paas hain.",
-            "Tere ishq mein fanaa ho jane ko dil chahta hai,\nYeh dil sirf aapka hi bankar rehna chahta hai.",
-            "Aapki khushi meri pehli khwahish hai,\nAapka sath meri sabse badi farmayish hai.",
-            "Tere bina yeh dil kisi aur ko chahta nahi,\nTumhare siva ise kuch aur bhata nahi.",
-            "Aapki har ek baat dil ko chhoo leti hai,\nYeh rooh aapko apna maan leti hai.",
-            "Tere ishq mein jine ka maza hi alag hai,\nTumhare sath har pal ek jashn sa lagta hai.",
-            "Aapki aankhon mein doobne ka alag hi maza hai,\nYeh mohabbat hi meri sabse badi waja hai.",
-            "Tere sath har khushi dugni ho jati hai,\nHar udaasi pal bhar mein kho jati hai.",
-            "Aapki hansi mere chehre par muskaan lati hai,\nYeh rooh aapke hi geet gaati hai.",
-            "Tere ishq mein paagal hona bhi manzoor hai,\nTum jo mil jao toh har sapna poora zaroor hai.",
-            "Aapki yaadon ke bina ek din bhi nahi katata,\nYeh dil aapke bina kahin nahi lagta.",
-            "Tere sath yeh safar aur bhi haseen ho gaya hai,\nTu meri zindagi ka sabse pyara haseen pal ho gaya hai.",
-            "Aapki har ek khushi par mera haq ho,\nHum dono ka yeh pyaar hamesha amar ho.",
-            "Tere ishq mein मेरी pehchan ban gayi hai,\nTu meri dhadkan aur meri jaan ban gayi hai.",
-            "Aapki baahon mein sukoon ka samandar hai,\nKitna pyaar hai aapke liye yeh dil ke andar hai.",
-            "Tere bina yeh zindagi adhuri si lagti hai,\nAapke sath har ek khushi poori si lagti hai.",
-            "Aapki ek jhalak pane ke liye dil tarsata hai,\nYeh pyaar hai jo har pal barsta hai.",
-            "Tere ishq mein doobkar humne sab kuch paya hai,\nKhuda ne jaise humein sirf aapke liye banaya hai.",
-            "Aapki palke jab uthti hain, naya din hota hai,\nAapke hone se hi mera yeh jahaan poora hota hai.",
-            "Tere sath har pal ek tyohar sa lagta hai,\nTu paas ho toh darr kaisa, sab achha lagta hai.",
-            "Aapki har ada par yeh dil haar jata hai,\nHar baar aap par hi pyaar aa jata hai.",
-            "Tere ishq ki khushboo meri saanson mein basi hai,\nTu hi meri pehli aur aakhri khushi hai.",
-            "Aapki aawaz sun kar din ban jata hai,\nYeh dil aapke pyaar mein kho jata hai.",
-            "Tere bina yeh zindagi ek khali kitaab hai,\nTab tak jab tak tum sath nahi ho.",
-            "Aapki khushi ke liye zameen aasmaan ek kar denge,\nHum apna sab kuch aap par nisaar kar denge.",
-            "Tere ishq mein jeena aur marna manzoor hai,\nTumhara sath hi meri zindagi ka noor hai.",
-            "Aapki ankhon mein pyaar ka samandar dekha hai,\nMaine aapse zyada haseen koi nahi dekha hai.",
-            "Tere sath har raat ek haseen khwab lagti hai,\nAapki yaad har pal mere sath jagti hai.",
-            "Aapki hansi meri duniya ki sabse badi daulat hai,\nAapka pyaar hi meri sabse badi taakat hai.",
-            "Tere ishq mein humne khud ko kho diya hai,\nLekin aapko paakar sab kuch paas liya hai.",
-            "Aapki baaton mein ek alag hi sukoon milta hai,\nAapka naam sunte hi yeh dil khil uthta hai.",
-            "Tere bina ek pal bhi sadiyon jaisa lagta hai,\nYeh dil bas aapke liye hi dhadakta hai.",
-            "Aapki har ek khwahish meri poori ho, bas yahi dua hai,\nAapse milkar hi meri zindagi khubsurat hui hai.",
-            "Tere ishq mein fanaa hone ka nasha hi alag hai,\nTumhare sath har pal bada pyara sa lagta hai.",
-            "Aapki ankhon se hi mera sara jahaan roshan hai,\nAapka pyaar hi mera sabse bada aashiyana hai.",
-            "Tere sath bitaya har lamha yaadgar ban jata hai,\nYeh dil aapke bina ek pal bhi nahi reh pata hai."
-        ];
-
-        function shuffleTagline() {
-            const randomIndex = Math.floor(Math.random() * romanticShayris.length);
-            document.getElementById('mood-tagline').innerText = romanticShayris[randomIndex];
-        }
-
-        window.addEventListener('DOMContentLoaded', () => {
-            shuffleTagline();
-        });
-
-        let isRepeating = false;
-        function toggleRepeat() {
-            isRepeating = !isRepeating;
-            const btn = document.getElementById('repeat-btn');
-            btn.classList.toggle('active', isRepeating);
-        }
-
-        let player;
-        let isPlaying = false;
-        let isShuffled = true; 
-        let progressInterval;
-        let playlistArray = [];
-        let metadataCache = {}; 
-
-        function onYouTubeIframeAPIReady() {
-            player = new YT.Player('yt-player', {
-                height: '10',
-                width: '10',
-                playerVars: {
-                    listType: 'playlist',
-                    list: 'PLYfPZBdSW0-U', 
-                    controls: 0,           
-                    disablekb: 1,          
-                    fs: 0,
-                    rel: 0,
-                    autoplay: 0
-                },
-                events: {
-                    'onReady': onPlayerReady,
-                    'onStateChange': onPlayerStateChange,
-                    'onError': onPlayerError
-                }
-            });
-        }
-
-        function onPlayerReady(event) {
-            player.setShuffle(true);
-            document.getElementById('shuffle-btn').classList.add('active');
-
-            setTimeout(() => {
-                if(player.getPlaylist) {
-                    playlistArray = player.getPlaylist() || [];
-                    
-                    if (playlistArray.length > 0) {
-                        const randomIndex = Math.floor(Math.random() * playlistArray.length);
-                        player.playVideoAt(randomIndex);
-                        updateSongInfo();
-                    }
-
-                    prefetchPlaylistMetadata(); 
-                }
-            }, 1000);
-        }
-
-        async function prefetchPlaylistMetadata() {
-            buildQueueUI(); 
-
-            for (let i = 0; i < playlistArray.length; i++) {
-                const videoId = playlistArray[i];
-                
-                if (!metadataCache[i]) {
-                    try {
-                        const response = await fetch(`https://noembed.com/embed?dataType=json&url=https://www.youtube.com/watch?v=${videoId}`);
-                        const data = await response.json();
-                        
-                        if (data && data.title) {
-                            metadataCache[i] = {
-                                title: data.title,
-                                artist: data.author_name || "YouTube Music"
-                            };
-                        }
-                    } catch (e) {
-                        metadataCache[i] = {
-                            title: `Track ${i + 1}`,
-                            artist: "YouTube Music"
-                        };
-                    }
-                    buildQueueUI(); 
-                }
-            }
-        }
-
-        function onPlayerStateChange(event) {
-            if (event.data === YT.PlayerState.PLAYING) {
-                isPlaying = true;
-                updatePlayPauseUI();
-                updateSongInfo();
-                
-                progressInterval = setInterval(updateProgressBar, 1000);
-            } 
-            else if (event.data === YT.PlayerState.PAUSED) {
-                isPlaying = false;
-                updatePlayPauseUI();
-                clearInterval(progressInterval);
-            }
-            else if (event.data === YT.PlayerState.ENDED) {
-                if (isRepeating) {
-                    player.seekTo(0);
-                    player.playVideo();
-                } else {
-                    isPlaying = false;
-                    updatePlayPauseUI();
-                    clearInterval(progressInterval);
-                }
-            }
-        }
-
-        function onPlayerError(event) {
-            console.log("YouTube error. Skipping to next track.", event.data);
-            player.nextVideo();
-        }
-
-        function updateSongInfo() {
-            const videoData = player.getVideoData();
-            if (videoData && videoData.title) {
-                const currentIndex = player.getPlaylistIndex();
-                const currentTitle = videoData.title;
-                const currentArtist = videoData.author || "YouTube Music";
-                const videoId = videoData.video_id;
-
-                document.getElementById('now-playing').innerText = currentTitle;
-                document.getElementById('channel-info').innerText = currentArtist;
-                document.getElementById('album-art').src = `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`;
-
-                shuffleTagline();
-
-                metadataCache[currentIndex] = { title: currentTitle, artist: currentArtist };
-                buildQueueUI(); 
-            }
-        }
-
-        // --- FIXED: ROBUST SEARCH & DIRECT PLAY MAPPING ---
         function buildQueueUI() {
             const queueList = document.getElementById('queue-list');
             const searchInput = document.getElementById('queue-search');
@@ -2039,7 +974,6 @@
                     }
                 }
 
-                // Enhanced flexible search across title and artist
                 if (query) {
                     const queryWords = query.split(/\s+/);
                     const targetText = `${trackData.title} ${trackData.artist}`.toLowerCase();
@@ -2056,7 +990,6 @@
                     <span class="queue-artist">${trackData.artist}</span>
                 `;
                 
-                // FIXED: Guarantees that clicking any search result or list item directly plays that specific track index
                 item.onclick = (e) => {
                     e.stopPropagation();
                     player.playVideoAt(arrayIndex);
